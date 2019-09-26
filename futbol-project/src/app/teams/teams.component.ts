@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TeamsService } from '../services/teams.services';
 import { Team } from '../models/team'
 
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-teams',
   templateUrl: './teams.component.html',
@@ -9,34 +11,15 @@ import { Team } from '../models/team'
   providers: [ TeamsService ]
 })
 export class TeamsComponent implements OnInit {
+  
+  public team$: Observable<Team[]>;
 
-  public teams: Team[];
+  constructor(private teamService: TeamsService) {
+    this.team$ = this.teamService.getTeams();
 
-  constructor(private teamsService: TeamsService) {
-    this.teamsService.getTeams().subscribe(data => {
-      this.teams = data;
-    });
-   
+  }
 
-   this.teams = [
-     {
-       name: 'America',
-       city: 'CDMX',
-       stadium: 'Estadio Azteca',
-       position: 3,
-       points: 15
-     },
-     {
-       name: 'Atlas',
-       city: 'Guadalajara',
-       stadium: 'Estadio Jalisco',
-       position: 4,
-       points: 11
-       
-     }
-   ]
-
-  // ngOnInit() {
-  // }
+  ngOnInit() {
+  }
 
 }

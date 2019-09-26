@@ -16,4 +16,14 @@ export class TeamsService {
     constructor(private http: HttpClient) {
 
     }
+
+    public getTeams(): Observable<Team[]> {
+        return this.http.get<Team[]>(`${environment.apiUrl}/team`)
+        .pipe(
+            catchError((err) => {
+                alert('there was an error.');
+                return of(err)
+            })
+        );
+    }
 }

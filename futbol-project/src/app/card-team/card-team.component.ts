@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Team } from '../models/team';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-team',
@@ -7,19 +8,9 @@ import { Team } from '../models/team';
   styleUrls: ['./card-team.component.scss']
 })
 export class CardTeamComponent {
-
-  constructor() { }
-
   @Input() team: Team;
 
-  ngOnInit() {
+  constructor(private router: Router) { }
 
-
-  }
-
-    showData(data: Team) {
-    let team: string = `${data.name} ${data.city}`;
-    alert(team)
-  }
 
 }

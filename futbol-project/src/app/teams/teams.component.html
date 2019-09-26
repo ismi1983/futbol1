@@ -1,1 +1,7 @@
-<p>teams works!</p>
+
+<div class="row m-0">
+        <div *ngFor="let team of teams$ | async" class="col-md-4">
+            <app-card-team [team]="team"></app-card-team>
+    
+        </div>
+    </div>
