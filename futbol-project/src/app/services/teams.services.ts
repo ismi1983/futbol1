@@ -18,7 +18,7 @@ export class TeamsService {
     }
 
     public getTeams(): Observable<Team[]> {
-        return this.http.get<Team[]>(`${environment.apiUrl}/team`)
+        return this.http.get<Team[]>(`${environment.apiUrl}`)
         .pipe(
             catchError((err) => {
                 alert('there was an error.');

@@ -1,29 +1,18 @@
-<div class="card mb-1">
-        <div class="card-body text-center">
+<div class="card mb-3">
+    <div class="card-body text-center">
+        <img class="w-100" src="../../assets/teamlogos/america.png">
     
-            <!-- <img class="w-100" src="{{team.profileImg}}"> -->
-    
-            <span  class="w-100 d-inline-block">{{team.name}}
-            </span>
-    
-            
-            <div class="row m-0 mt-2 d-inline-block">
-                <label></label><br>
-              
-            </div>
-    
-            <div class="mt-3">
-                
-            </div>
-    
-            <!-- <span *ngIf="increasedAge; else ageElse">{{increasedAge}}</span>
-            <ng-template #ageElse><span>{{person.age}}</span></ng-template> -->
-    <!-- 
-            <span [ngClass]="{ 'text-danger': increasedAge}">{{person.age}}</span> -->
-    
-            <!-- <div class="btn-wrapper">
-                <button class="btn btn-primary" (click)="showData(person)">Click Me!</button>
-                <button class="btn btn-secondary" (click)="increaseAge(person)">Increase Age</button>
-            </div> -->
+        <span  class="w-100 d-inline-block">{{team.name}}
+        </span>
+        <span  class="w-100 d-inline-block">{{team.location}}
+        </span>
+        <span  class="w-100 d-inline-block">Posición: {{team.position}}
+        </span>
+        <span  class="w-100 d-inline-block">Puntos: {{team.points}}
+        </span>
+
+        <div class="row m-0 mt-2 d-inline-block">
         </div>
-    </div>                       
+
+    </div>
+</div>                       

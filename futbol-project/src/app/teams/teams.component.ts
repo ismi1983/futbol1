@@ -12,10 +12,10 @@ import { Observable } from 'rxjs';
 })
 export class TeamsComponent implements OnInit {
   
-  public team$: Observable<Team[]>;
+  public teams$: Observable<Team[]>;
 
-  constructor(private teamService: TeamsService) {
-    this.team$ = this.teamService.getTeams();
+  constructor(private teamsService: TeamsService) {
+    this.teams$ = this.teamsService.getTeams();
 
   }
 

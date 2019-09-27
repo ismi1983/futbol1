@@ -5,5 +5,4 @@ export interface Team {
     stadium: string;
     position: number;
     points: number
-
 }

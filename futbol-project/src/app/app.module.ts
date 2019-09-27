@@ -24,7 +24,7 @@ const routes: Routes = [
     AppComponent,
     CardTeamComponent,
     TeamsComponent,
-    MainComponent
+    MainComponent,
   ],
   imports: [
     BrowserModule,
