@@ -1,0 +1,14 @@
+nav.nav {
+  // border-right: solid 1px black;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  // min-width: 200px;
+  img {
+    max-width: 80px;
+    height: 70px;
+  }
+  a .ng-fa-icon::after{
+    content: " ";
+  }
+}

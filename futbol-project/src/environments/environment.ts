@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://54.183.38.104:8081/api/table'
+  apiUrl: ''
 };
 
 /*
