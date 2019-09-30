@@ -4,8 +4,8 @@ html, body {
 }
 
 body {
-    background-image: url('https://img4.goodfon.com/wallpaper/nbig/d/21/art-futbolnoe-pole-miach-futbol-stadion-soccer-field-traekto.jpg');
-    background-repeat: no-repeat;
+    background-image: url('./assets/images/fondo.jpg');
+    background-attachment: fixed;
     background-size: cover;
 }
 
@@ -22,19 +22,13 @@ body::before {
 
 }
 
-.wrapper {
-    z-index: 100;
-    position: relative;
-    height: calc(100% - 106px);
-    overflow-y: auto;
-    margin-top: 10px 
-}
+
 
 h1 {
     height: 96px;
     z-index: 200;
     position: relative;
-    font-size: 5em;
+    font-size: 4em;
     color: white
 }
 
