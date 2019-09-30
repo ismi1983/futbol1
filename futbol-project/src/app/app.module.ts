@@ -11,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { GeneralTableComponent } from './general-table/general-table.component';
 
 const routes: Routes = [
   { path: 'teams', 
@@ -19,7 +20,13 @@ const routes: Routes = [
       { path: '', component: TeamsComponent},
     ] 
   },
-  { path: '', redirectTo: 'teams', pathMatch: 'full'}
+  { path: 'table', 
+    component: MainComponent,
+    children: [
+      { path: '', component: GeneralTableComponent},
+    ] 
+  },
+  { path: '', redirectTo: 'teams', pathMatch: 'full'},
 ]
 
 @NgModule({
@@ -29,6 +36,7 @@ const routes: Routes = [
     TeamsComponent,
     MainComponent,
     NavBarComponent,
+    GeneralTableComponent,
   ],
   imports: [
     BrowserModule,
