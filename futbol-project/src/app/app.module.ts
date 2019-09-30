@@ -12,6 +12,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GeneralTableComponent } from './general-table/general-table.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: 'teams', 
@@ -27,6 +29,7 @@ const routes: Routes = [
     ] 
   },
   { path: '', redirectTo: 'teams', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent },
 ]
 
 @NgModule({
@@ -37,13 +40,16 @@ const routes: Routes = [
     MainComponent,
     NavBarComponent,
     GeneralTableComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),   
+    RouterModule.forRoot(routes), 
     AppRoutingModule,
     FontAwesomeModule,   
+    FormsModule,
+    ReactiveFormsModule,  
   ],
   providers: [],
   bootstrap: [AppComponent]
