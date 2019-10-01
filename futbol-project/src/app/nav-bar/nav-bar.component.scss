@@ -1,0 +1,41 @@
+nav.nav {
+  // border-right: solid 1px black;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  // min-width: 200px;
+  a {
+    width: 150px;
+    // max-width: 180px;
+  }
+  img {
+    max-width: 80px;
+    height: 40px;
+  }
+  a .ng-fa-icon::after{
+    content: " ";
+  }
+}
+@media (max-width: 992px) {
+  a {
+    text-align: center;
+  }
+}
+@media (max-width: 549px) {
+  nav.nav {
+    align-content: center;
+    display: flex!important;
+    flex-direction: column;
+  }
+  a {
+    display: block!important;
+  }
+  img {
+    align-self: center;
+  }
+}
+@media (min-width: 993px) {
+  a {
+    display: block!important;
+  }
+}

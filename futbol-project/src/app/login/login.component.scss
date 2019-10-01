@@ -1,0 +1,25 @@
+.card {
+    background-color: rgba(0, 0, 0, 0.6);
+    min-width: 350px
+}
+
+.card-body {
+    height: 350px;
+    padding: 40px;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 30px
+}
+
+input {
+    border-radius: 5px;
+    height: 45px;
+    padding: 5px;
+    border-color: transparent;
+}
+
+button {
+    float: right;
+}
