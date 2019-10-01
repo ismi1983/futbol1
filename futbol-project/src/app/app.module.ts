@@ -13,6 +13,7 @@ import { CardTeamComponent } from './card-team/card-team.component';
 import { TeamsComponent } from './teams/teams.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   { path: 'teams', 
@@ -22,6 +23,7 @@ const routes: Routes = [
     ] 
   },
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: '', redirectTo: 'teams', pathMatch: 'full'}
 ]
 
@@ -33,6 +35,7 @@ const routes: Routes = [
     MainComponent,
     NavBarComponent,
     LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
