@@ -1,0 +1,41 @@
+ table {
+  font-size: 1.5rem;
+  width: 100%;
+  tbody tr td img {
+    height: 2.5rem;
+
+  }
+  tbody tr th{
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  tbody tr td:first-child, thead th:first-child {
+    padding-left: 10px;
+  }
+  thead {
+    background-color: rgba(255, 255, 255, .6);
+    height: 2.5rem;
+  }
+  tbody > :nth-child(2n-1) {
+    background-color: rgba(255, 255, 255, .45);
+  }
+  tbody > :nth-child(2n) {
+    background-color: rgba(255, 255, 255, .75);
+  }
+}
+@media (max-width: 992px) {
+  table {
+    font-size: 1.2rem;
+    tbody tr td img {
+      height: 1.8rem;
+    }
+  }
+}
+@media (max-width: 549px) {
+  table {
+    font-size: 1rem;
+    tbody tr td img {
+      height: 1.4rem;
+    }
+  }
+}
