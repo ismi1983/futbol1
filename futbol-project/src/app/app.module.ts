@@ -14,25 +14,23 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { GeneralTableComponent } from './general-table/general-table.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { EditComponent } from './edit/edit.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  { path: 'teams', 
+  { path: '', 
     component: MainComponent,
     children: [
-      { path: '', component: TeamsComponent},
+      { path: '', component: WelcomeComponent },
+      { path: 'teams', component: TeamsComponent},
+      { path: 'table', component: GeneralTableComponent},
+      { path: 'edit/:id', component: EditComponent },
     ] 
   },
-  { path: 'table', 
-    component: MainComponent,
-    children: [
-      { path: '', component: GeneralTableComponent},
-    ] 
-  },
-  { path: '', redirectTo: 'teams', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: '', redirectTo: 'teams', pathMatch: 'full'}
+  // { path: '', redirectTo: 'teams', pathMatch: 'full'},
 ]
 
 @NgModule({
@@ -44,6 +42,8 @@ const routes: Routes = [
     NavBarComponent,
     GeneralTableComponent,
     LoginComponent,
+    WelcomeComponent,
+    EditComponent,
     SignupComponent,
   ],
   imports: [

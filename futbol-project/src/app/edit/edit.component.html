@@ -1,0 +1,46 @@
+<h1 class="title text-center mt-0">Editar <span class="sm-remove">Equipo</span></h1>
+<div class="container" *ngIf="team$">
+  <form [formGroup]='formTeam' (ngSubmit)='onEdit()' class="row">
+    <input type="hidden" formControlName="id">
+    <div class="form-group col-md-6">
+      <label>Nombre</label>
+      <input type="text" formControlName="name" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Estadio</label>
+      <input type="text" formControlName="stadium" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Ciudad</label>
+      <input type="text" formControlName="location" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>URL del Logotipo</label>
+      <input type="text" formControlName="logo" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Juegos ganados</label>
+      <input type="number" min="0" max="100" formControlName="games_won" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Juegos perdidos</label>
+      <input type="number" min="0" max="100" formControlName="games_lost" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Juegos empatados</label>
+      <input type="number" min="0" max="100" formControlName="games_tied" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Goles a favor</label>
+      <input type="number" min="0" max="100" formControlName="goals_in_favor" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Goles en contra</label>
+      <input type="number" min="0" max="100" formControlName="goals_against" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+      <label class="transparent">X</label>
+      <button class="btn btn-success form-control ">Editar</button>
+    </div>
+  </form>
+</div>
