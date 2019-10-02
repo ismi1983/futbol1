@@ -1,11 +1,11 @@
 .card {
-  background-color: rgba(0, 0, 0, 0.6);
-  min-width: 350px
+  background-color: rgba(0, 0, 0, 0.7);
+  min-width: 350px;
+  height: 400px;
+  color: white;
 }
 
-.row {
-  margin-right: 200px;
-}
+
 .card-body {
   height: 350px;
   padding: 40px;
@@ -17,12 +17,13 @@ h2 {
 }
 
 input {
-  border-radius: 5px;
   height: 45px;
-  padding: 5px;
-  border-color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(221, 221, 221)
+
 }
 
 button {
   float: right;
+  margin-top: 25px
 }

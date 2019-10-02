@@ -20,9 +20,10 @@ export class SignupComponent implements OnInit {
   onSignup() {
     if (this.signupForm.valid) {
 
-    } else {
-      alert('¡Se requiere la información de todos los campos!')
-    }
+    } 
+    // else {
+    //   alert('¡Se requiere la información de todos los campos!')
+    // }
   }
 
   ngOnInit() {

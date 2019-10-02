@@ -1,3 +1,13 @@
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 19px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.container {
+    height: 50%
+}
 
 .fit-image{
     width: 100%;
@@ -9,5 +19,11 @@
     box-shadow: 10px 8px 10px black;
 }
 
+button {
+    margin-top: 15px
+}
 
-
+a {
+    float: right;
+    font-size: 25px;
+}
