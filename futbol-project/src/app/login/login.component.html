@@ -1,19 +1,26 @@
 <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-7">
-                <div class="card mt-5">
-    
-                    <div class="card-body">
-                        <h2>Iniciar Sesión</h2>
-                        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginData)">
-                            <input type="text" placeholder="ingrese correo electrónico" formControlName="email" class="mt-2 w-100">
-                            <input type="password" placeholder="ingrese contraseña" formControlName="password" class="mt-4 mb-4 w-100">
-                            <button class="btn btn-primary">Ingresar</button>
-                        </form>
-    
+  <div class="row justify-content-center">
+      <div class="col-5">
+          <div class="card mt-3">
+
+              <div class="card-body">
+                  <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginData)">
+                    <h2>Iniciar Sesión</h2>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Correo electrónico</label>
+                        <input type="text" formControlName="email" class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label for="formGroupExampleInput">Contraseña</label>
+                          <input type="password" formControlName="password" class="form-control">
+                        </div>
+                    <div>
+                        <a href="/signup" class="text-info">Crear una cuenta</a>
+                        <button class="btn btn-primary">Ingresar</button>
                     </div>
-                </div>
-            </div>
-        </div>
-    
-    </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { EditComponent } from './edit/edit.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   { path: 'teams', 
@@ -44,6 +45,8 @@ const routes: Routes = [
   },
   { path: '', redirectTo: 'teams', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: '', redirectTo: 'teams', pathMatch: 'full'}
 ]
 
 @NgModule({
@@ -57,6 +60,7 @@ const routes: Routes = [
     LoginComponent,
     WelcomeComponent,
     EditComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

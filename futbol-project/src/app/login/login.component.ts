@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
 
     } else {
-      alert('Wrong credentials!')
+      alert('¡Información incorrecta')
     }
   }
 

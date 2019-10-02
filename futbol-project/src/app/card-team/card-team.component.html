@@ -1,17 +1,16 @@
 <div class="card mb-3">
-    <div class="card-body text-center">
-        <img src="../../assets/teamlogos/{{team.logo}}" class="fit-image">
-        <span  class="w-100 d-inline-block">{{team.name}}
-        </span>
-        <span  class="w-100 d-inline-block">{{team.location}}
-        </span>
-        <span  class="w-100 d-inline-block">Posición: {{team.position}}
-        </span>
-        <span  class="w-100 d-inline-block">Puntos: {{team.points}}
-        </span>
-
-        <div class="row m-0 mt-2 d-inline-block">
-        </div>
-
+  <div class="card-body text-center">
+    <img src="../../assets/teamlogos/{{team.logo}}" class="fit-image">
+    <span  class="w-100 d-inline-block mt-2">{{team.name}}
+    </span>
+    <span  class="w-100 d-inline-block">{{team.location}}
+    </span>
+    <span  class="w-100 d-inline-block">Posición: {{team.position}}
+    </span>
+    <span  class="w-100 d-inline-block">Puntos: {{team.points}}
+    </span>
+    <span><a href="/edit/{{team.id}}" class="text-dark"><fa-icon [icon]="faEdit"></fa-icon></a></span>
+    <div class="row m-0 mt-2 d-inline-block">
     </div>
+  </div>
 </div>                       
