@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row justify-content-center mt-5">
-      <div class="col-8">
+      <div>
           <div class="card mt-4">
 
               <div class="card-body">
                   <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
                       <h2>Crear una cuenta</h2>
-                      <div class="row">
-                        <div class="col-md-5 p-1">
+                      <div class="row justify-content-center">
+                        <div class="col-md-6">
                           <div class="form-group">
                             <label for="validationTooltip01">Nombre</label>
                             <input type="text" formControlName="firstName" class="form-control">
@@ -22,7 +22,7 @@
                             <small id="emailHelp" class="form-text text-info">Puedes utilizar letras, números y puntos</small>
                           </div>
                         </div>
-                        <div class="col-md-5 p-1">
+                        <div class="col-md-6">
                           <div class="form-group">
                             <label for="formGroupExampleInput">Contraseña</label>
                             <input type="password" formControlName="password" class="form-control">
