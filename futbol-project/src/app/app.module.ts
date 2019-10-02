@@ -19,34 +19,18 @@ import { EditComponent } from './edit/edit.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  { path: 'teams', 
+  { path: '', 
     component: MainComponent,
     children: [
-      { path: '', component: TeamsComponent},
+      { path: '', component: WelcomeComponent },
+      { path: 'teams', component: TeamsComponent},
+      { path: 'table', component: GeneralTableComponent},
+      { path: 'edit/:id', component: EditComponent },
     ] 
   },
-  { path: 'table', 
-    component: MainComponent,
-    children: [
-      { path: '', component: GeneralTableComponent},
-    ] 
-  },
-  { path: 'welcome',
-    component: MainComponent,
-    children: [
-      { path: '', component: WelcomeComponent }
-    ],
-  },
-  { path: 'edit/:id',
-    component: MainComponent,
-    children: [
-      { path: '', component: EditComponent }
-    ],
-  },
-  { path: '', redirectTo: 'teams', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: '', redirectTo: 'teams', pathMatch: 'full'}
+  // { path: '', redirectTo: 'teams', pathMatch: 'full'},
 ]
 
 @NgModule({
