@@ -17,6 +17,9 @@ nav.nav {
   }
 }
 @media (max-width: 992px) {
+  nav.nav {
+    height: 72px;
+  }
   a {
     text-align: center;
   }
@@ -26,6 +29,7 @@ nav.nav {
     align-content: center;
     display: flex!important;
     flex-direction: column;
+    height: 192px;
   }
   a {
     display: block!important;

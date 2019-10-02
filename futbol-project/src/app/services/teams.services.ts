@@ -22,8 +22,31 @@ export class TeamsService {
         .pipe(
             catchError((err) => {
                 alert('there was an error.');
+                console.log(err);
+                debugger;
                 return of(err)
             })
         );
+    }
+
+    public getTeam(id: string):Observable<Team> {
+        return this.http.get<Team>(`${environment.apiUrl}/${id}`)
+        .pipe(
+            catchError((err) => {
+                alert('there was an error.')
+                console.log(err);
+                return of(err);
+            })
+        )
+    }
+    public editTeam(team: Team):Observable<Team> {
+        return this.http.put<Team>(`${environment.apiUrl}/${team.id}`, team)
+        .pipe(
+            catchError((err) => {
+                alert('there was an error.')
+                console.log(err);
+                return of(err);
+            })
+        )
     }
 }
