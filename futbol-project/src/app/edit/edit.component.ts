@@ -48,7 +48,6 @@ export class EditComponent {
   }
 
   onEdit():void {
-    console.log(this.formTeam);
     if (!this.formTeam.valid) {
       alert('Faltan valores requeridos');
       return;
@@ -58,9 +57,6 @@ export class EditComponent {
   editPerson(team: Team):any {
     this.teamsService.editTeam(team).subscribe((team) => {
       this.team$ = team;
-      console.log(team);
-      
     });
-    // console.log(JSON.stringify(team));
   }
 }

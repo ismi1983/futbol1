@@ -17,20 +17,57 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { EditComponent } from './edit/edit.component';
 import { SignupComponent } from './signup/signup.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', 
+  // { path: '', component: LoginComponent },
+  // { path: '', 
+  //   component: MainComponent,
+  //   canActivate: [AuthGuard],
+  //   children: [
+  //     { path: 'welcome', component: WelcomeComponent },
+  //     { path: 'teams', component: TeamsComponent},
+  //     { path: 'table', component: GeneralTableComponent},
+  //     { path: 'edit/:id', component: EditComponent },
+  //   ] 
+  // },
+  // { path: 'signup', component: SignupComponent },
+  {
+    path: '',
+    component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+  },
+  { path: 'teams', 
     component: MainComponent,
+    canActivate: [AuthGuard],
     children: [
-      { path: '', component: WelcomeComponent },
-      { path: 'teams', component: TeamsComponent},
-      { path: 'table', component: GeneralTableComponent},
-      { path: 'edit/:id', component: EditComponent },
+      { path: '', component: TeamsComponent},
     ] 
   },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  // { path: '', redirectTo: 'teams', pathMatch: 'full'},
+  { path: 'table', 
+    component: MainComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: '', component: GeneralTableComponent},
+    ] 
+  },
+  { path: 'welcome',
+    component: MainComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: '', component: WelcomeComponent }
+    ],
+  },
+  { path: 'edit/:id',
+    component: MainComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: '', component: EditComponent }
+    ],
+  },
 ]
 
 @NgModule({
@@ -49,7 +86,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes), 
+    RouterModule.forRoot(routes),
     AppRoutingModule,
     FontAwesomeModule,   
     FormsModule,

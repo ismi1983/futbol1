@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,11 @@ export class SignupComponent implements OnInit {
     password: new FormControl('', Validators.required),
     validatePassword: new FormControl('', Validators.required)
   })
-  constructor() { }
+  constructor(private router: Router) {
+    if(localStorage.getItem('auth')){
+      this.router.navigate(['./welcome']);
+    }
+  }
 
   onSignup() {
     if (this.signupForm.valid) {

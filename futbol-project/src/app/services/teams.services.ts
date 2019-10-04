@@ -23,7 +23,6 @@ export class TeamsService {
             catchError((err) => {
                 alert('there was an error.');
                 console.log(err);
-                debugger;
                 return of(err)
             })
         );

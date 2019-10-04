@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5000'
+  apiUrl: 'https://still-hollows-70530.herokuapp.com/teams'
 };
 
 /*
