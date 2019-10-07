@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Team } from '../models/team';
-import { TeamResponse } from '../models/TeamResponse';
 import { Router } from '@angular/router';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,7 +11,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 export class CardTeamComponent {
 
   faEdit = faEdit;
-  @Input() team: TeamResponse;
+  @Input() team: Team;
 
   constructor(private router: Router) { }
 

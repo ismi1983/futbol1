@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamsService } from '../services/teams.service';
 import { Team } from '../models/team'
-import { map } from 'rxjs/operators';
+
 import { Observable } from 'rxjs';
-import { TeamResponse } from '../models/TeamResponse';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-teams',
@@ -13,12 +13,11 @@ import { TeamResponse } from '../models/TeamResponse';
 })
 export class TeamsComponent {
   
- teams: Team[]; 
+  public teams$: Observable<Team[]>;
 
- constructor(private teamService: TeamsService) {
-   this.teamService.getTeams().subscribe(
-    (data) => {this.teams = data.data}
-  );
-}
-
+  constructor(private teamsService: TeamsService) {
+    this.teams$ = this.teamsService.getTeams().pipe(
+      map(results => results.data)
+    )
   }
+}

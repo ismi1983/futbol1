@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { TeamsService } from '../services/teams.service';
 import { Team } from '../models/team';
+import { Response, ResponseTeam } from '../models/responses';
 
 @Component({
   selector: 'app-edit',
@@ -18,6 +19,7 @@ export class EditComponent {
   constructor(
     private teamsService: TeamsService,
     private route: ActivatedRoute,
+    private router: Router,
   ) {
     this.getTeam();
   }
@@ -41,7 +43,7 @@ export class EditComponent {
   getTeam():void {
     const id: string = this.route.snapshot.paramMap.get('id');
     this.teamsService.getTeam(id).subscribe((team) => {
-      this.team$ = team;
+      this.team$ = team.data;
       this.createFormTeam();
       // console.log(team);      
     });
@@ -52,11 +54,18 @@ export class EditComponent {
       alert('Faltan valores requeridos');
       return;
     }
-    this.editPerson(this.formTeam.value);
+    this.editTeam(this.formTeam.value);
   }
-  editPerson(team: Team):any {
-    this.teamsService.editTeam(team).subscribe((team) => {
-      this.team$ = team;
-    });
+  editTeam(team: Team): void{
+    this.teamsService.editTeam(team).subscribe((result: ResponseTeam) => {
+      console.log(result);      
+      if (result.status === 'failure') {
+        alert('There was an error');
+        return;
+      }
+      this.team$ = result.data;
+      alert('Editado correctamente');
+      this.router.navigate(['./table']);
+    })
   }
 }

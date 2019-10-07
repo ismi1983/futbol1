@@ -6,7 +6,6 @@ import { Team } from '../models/team';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { TeamsService } from '../services/teams.service';
-import { TeamResponse } from '../models/TeamResponse';
 
 @Component({
   selector: 'app-general-table',
@@ -17,7 +16,7 @@ export class GeneralTableComponent {
 
   faEdit = faEdit;
 
-  teams$: Observable<TeamResponse[]>;
+  teams$: Observable<Team[]>;
 
   constructor(private teamService: TeamsService) {
     this.teams$ = this.teamService.getTeams().pipe(

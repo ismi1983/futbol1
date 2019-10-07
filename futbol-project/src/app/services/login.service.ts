@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { LoginResponse } from '../models/loginResponse';
+import { Credentials } from '../models/credentials';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -14,10 +14,10 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  login(){
+  login(credentials: Credentials){
     // console.log(credentials);
     
-    return this.http.post(`${environment.apiUrl}/user/login`, LoginResponse)
+    return this.http.post(`${environment.apiUrl}/user/login`, credentials)
     .pipe(
       catchError((err) => {
         alert('there was an error.');
@@ -28,13 +28,12 @@ export class LoginService {
   }
 
   isLogged(): boolean{
-    console.log('Auth: '+localStorage.getItem('auth'));
+    // console.log('Auth: '+localStorage.getItem('auth'));
     return !!localStorage.getItem('auth');
   };
 
   logOut(): void {
-    console.log('logOut');
-    
+    // console.log('logOut');
     localStorage.removeItem('auth');
   }
 }
