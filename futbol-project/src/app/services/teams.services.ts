@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 import { Team } from '../models/team';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
+import { ResponseTeams, ResponseTeam } from '../models/responses';
 
 @Injectable({
     providedIn: 'root'
@@ -17,8 +17,8 @@ export class TeamsService {
 
     }
 
-    public getTeams(): Observable<Team[]> {
-        return this.http.get<Team[]>(`${environment.apiUrl}`)
+    public getTeams(): Observable<ResponseTeams> {
+        return this.http.get<ResponseTeams>(`${environment.apiUrl}/teams`)
         .pipe(
             catchError((err) => {
                 alert('there was an error.');
@@ -28,8 +28,8 @@ export class TeamsService {
         );
     }
 
-    public getTeam(id: string):Observable<Team> {
-        return this.http.get<Team>(`${environment.apiUrl}/${id}`)
+    public getTeam(id: string):Observable<ResponseTeam> {
+        return this.http.get<ResponseTeam>(`${environment.apiUrl}/teams/${id}`)
         .pipe(
             catchError((err) => {
                 alert('there was an error.')
@@ -38,8 +38,13 @@ export class TeamsService {
             })
         )
     }
-    public editTeam(team: Team):Observable<Team> {
-        return this.http.put<Team>(`${environment.apiUrl}/${team.id}`, team)
+    public editTeam(team: Team):Observable<ResponseTeam> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Authorization': `Bearer ${localStorage.getItem("auth")}`
+            })
+        };
+        return this.http.put<ResponseTeam>(`${environment.apiUrl}/teams/${team.id}`, team, httpOptions)
         .pipe(
             catchError((err) => {
                 alert('there was an error.')

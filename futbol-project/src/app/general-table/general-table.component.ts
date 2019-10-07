@@ -20,7 +20,10 @@ export class GeneralTableComponent {
 
   constructor(private teamService: TeamsService) {
     this.teams$ = this.teamService.getTeams().pipe(
-      map(results => results.sort((a, b) => a.position - b.position))
+      map(results => {
+        console.log(results);        
+        return results.data.sort((a, b) => a.position - b.position);
+      })
     );
   }
 
