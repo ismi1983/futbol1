@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faTable, faUsers, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { LoginService } from '../services/login.service';
 // import { faFutbol } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -15,7 +16,11 @@ export class NavBarComponent implements OnInit {
   faSignOut = faSignOutAlt;
 
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
+
+  logOut() {
+    this.loginService.logOut();
+  }
 
   ngOnInit() {
   }

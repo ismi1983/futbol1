@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router'
+
+import { LoginService } from '../services/login.service';
+import { ResponseLogin } from '../models/responses';
  
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
 
   loginForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.required]),
@@ -15,24 +19,33 @@ export class LoginComponent implements OnInit {
 
   search: string = '';
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private loginService: LoginService, private router: Router) { 
+    if(localStorage.getItem('auth')){
+      this.router.navigate(['./welcome']);
+    }
   }
 
   onLogin() {
     if (this.loginForm.valid) {
-
+      this.loginService.login(this.loginForm.value)
+      .subscribe((response: ResponseLogin) => {
+        if (!response.data.token) {
+          alert('¡Información incorrecta!')
+        } else {
+          localStorage.setItem('auth', response.data.token);
+          this.router.navigate(['./welcome']);
+        }
+      });
     } else {
-      alert('¡Información incorrecta')
+      alert('¡Información faltante o con mal formato!')
     }
   }
 
-  onLogin2(data) {
-    console.log(data)
-  }
+  // onLogin2(data) {
+  //   console.log(data)
+  // }
 
-  onClick() {
-    console.log(this.search)
-  }
+  // onClick() {
+  //   console.log(this.search)
+  // }
 }
