@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 import { Team } from '../models/team';
+import { TeamResponse } from '../models/TeamResponse';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -17,19 +18,20 @@ export class TeamsService {
 
     }
 
-    public getTeams(): Observable<Team[]> {
-        return this.http.get<Team[]>(`${environment.apiUrl}`)
+    public getTeams(): Observable<TeamResponse> {
+        return this.http.get<TeamResponse>(`${environment.apiUrl}/teams`)
         .pipe(
             catchError((err) => {
                 alert('there was an error.');
                 console.log(err);
+                debugger;
                 return of(err)
             })
         );
     }
 
-    public getTeam(id: string):Observable<Team> {
-        return this.http.get<Team>(`${environment.apiUrl}/${id}`)
+    public getTeam(id: string):Observable<TeamResponse> {
+        return this.http.get<TeamResponse>(`${environment.apiUrl}/${id}`)
         .pipe(
             catchError((err) => {
                 alert('there was an error.')
@@ -38,8 +40,8 @@ export class TeamsService {
             })
         )
     }
-    public editTeam(team: Team):Observable<Team> {
-        return this.http.put<Team>(`${environment.apiUrl}/${team.id}`, team)
+    public editTeam(team: Team):Observable<TeamResponse> {
+        return this.http.put<TeamResponse>(`${environment.apiUrl}/${team.id}`, team)
         .pipe(
             catchError((err) => {
                 alert('there was an error.')

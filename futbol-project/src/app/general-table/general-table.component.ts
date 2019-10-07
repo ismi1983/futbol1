@@ -5,7 +5,8 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { Team } from '../models/team';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { TeamsService } from '../services/teams.services';
+import { TeamsService } from '../services/teams.service';
+import { TeamResponse } from '../models/TeamResponse';
 
 @Component({
   selector: 'app-general-table',
@@ -16,11 +17,11 @@ export class GeneralTableComponent {
 
   faEdit = faEdit;
 
-  teams$: Observable<Team[]>;
+  teams$: Observable<TeamResponse[]>;
 
   constructor(private teamService: TeamsService) {
     this.teams$ = this.teamService.getTeams().pipe(
-      map(results => results.sort((a, b) => a.position - b.position))
+      map(results => results.data.sort((a, b) => a.position - b.position))
     );
   }
 

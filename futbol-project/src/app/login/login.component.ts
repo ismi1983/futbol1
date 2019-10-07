@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
 
 import { LoginService } from '../services/login.service';
+import { LoginResponse } from '../models/loginResponse';
  
 @Component({
   selector: 'app-login',
@@ -29,13 +30,14 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     if (this.loginForm.valid) {
-      // this.loginService.login(this.loginForm.value)
-      // .subscribe((token: string) => {
-        localStorage.setItem('auth', "holis");
+      this.loginService.login(this.loginForm.value)
+      .subscribe((response: LoginResponse) => {
+        const { token } = response.data
+        localStorage.setItem('auth', token);
         this.router.navigate(['./welcome']);
-      // });
+      });
     } else {
-      alert('¡Información incorrecta')
+      alert('¡Información incorrecta!')
     }
   }
 

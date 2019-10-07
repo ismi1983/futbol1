@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Credentials } from '../models/credentials';
+import { LoginResponse } from '../models/loginResponse';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -14,10 +14,10 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  login(credentials: Credentials){
-    console.log(credentials);
+  login(){
+    // console.log(credentials);
     
-    return this.http.post(`${environment.apiUrl}/login`, credentials)
+    return this.http.post(`${environment.apiUrl}/user/login`, LoginResponse)
     .pipe(
       catchError((err) => {
         alert('there was an error.');

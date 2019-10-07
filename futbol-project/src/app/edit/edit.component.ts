@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { TeamsService } from '../services/teams.services';
+import { TeamsService } from '../services/teams.service';
 import { Team } from '../models/team';
 
 @Component({
