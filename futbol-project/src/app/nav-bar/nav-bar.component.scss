@@ -16,6 +16,7 @@ nav.nav {
     content: " ";
   }
 }
+
 @media (max-width: 991px) {
   nav.nav {
     height: 72px;
@@ -24,6 +25,7 @@ nav.nav {
     text-align: center;
   }
 }
+
 @media (max-width: 549px) {
   nav.nav {
     align-content: center;
@@ -38,6 +40,7 @@ nav.nav {
     align-self: center;
   }
 }
+
 @media (min-width: 992px) {
   a {
     display: block!important;

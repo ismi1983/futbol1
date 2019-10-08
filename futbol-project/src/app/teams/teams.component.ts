@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { TeamsService } from '../services/teams.services';
+import { Component } from '@angular/core';
+import { TeamsService } from '../services/teams.service';
 import { Team } from '../models/team'
 
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./teams.component.scss'],
   providers: [ TeamsService ]
 })
-export class TeamsComponent implements OnInit {
+export class TeamsComponent {
   
   public teams$: Observable<Team[]>;
 
@@ -19,10 +19,5 @@ export class TeamsComponent implements OnInit {
     this.teams$ = this.teamsService.getTeams().pipe(
       map(results => results.data)
     )
-
   }
-
-  ngOnInit() {
-  }
-
 }

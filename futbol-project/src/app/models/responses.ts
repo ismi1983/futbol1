@@ -5,16 +5,19 @@ export interface ResponseTeams {
   message: string;
   data: Team[];
 }
+
 export interface ResponseTeam {
   status: string;
   message: string;
   data: Team;
 }
+
 export interface ResponseLogin {
   status: string;
   message: string;
   data: { token: string };
 }
+
 export interface Response {
   status: string;
   message: string;
