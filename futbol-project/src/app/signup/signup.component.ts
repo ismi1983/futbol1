@@ -9,7 +9,7 @@ import { Response } from '../models/responses';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
 
   signupForm: FormGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
@@ -41,7 +41,6 @@ export class SignupComponent implements OnInit {
       }
     }
 
-  ngOnInit() {
-  }
+
 
 }
