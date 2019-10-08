@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Credentials } from '../models/credentials';
 import { environment } from '../../environments/environment';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class LoginService {
       catchError((err) => {
         alert('there was an error.');
         console.log(err);
-        return (err)
+        return of(err);
     })
     )
   }
