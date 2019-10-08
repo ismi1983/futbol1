@@ -17,8 +17,8 @@ export class LoginService {
     return this.http.post(`${environment.apiUrl}/user/login`, credentials)
     .pipe(
       catchError((err) => {
-        alert('there was an error.');
-        console.log(err);
+        // alert('there was an error.');
+        // console.log(err);
         return of(err);
     })
     )

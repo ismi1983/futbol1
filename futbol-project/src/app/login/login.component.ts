@@ -30,8 +30,8 @@ export class LoginComponent{
     if (this.loginForm.valid) {
       this.loginService.login(this.loginForm.value)
       .subscribe((response: ResponseLogin) => {
-        if (!response.data.token) {
-          alert('¡Información incorrecta!')
+        if (response.status !== 'success') {
+          alert('¡Email o contraseña incorrectos!')
         } else {
           localStorage.setItem('auth', response.data.token);
           this.router.navigate(['./welcome']);
