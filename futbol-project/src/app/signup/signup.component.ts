@@ -40,7 +40,4 @@ export class SignupComponent {
         alert('¡Información faltante o con mal formato!')
       }
     }
-
-
-
 }
