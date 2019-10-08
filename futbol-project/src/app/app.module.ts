@@ -20,18 +20,6 @@ import { SignupComponent } from './signup/signup.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  // { path: '', component: LoginComponent },
-  // { path: '', 
-  //   component: MainComponent,
-  //   canActivate: [AuthGuard],
-  //   children: [
-  //     { path: 'welcome', component: WelcomeComponent },
-  //     { path: 'teams', component: TeamsComponent},
-  //     { path: 'table', component: GeneralTableComponent},
-  //     { path: 'edit/:id', component: EditComponent },
-  //   ] 
-  // },
-  // { path: 'signup', component: SignupComponent },
   {
     path: '',
     component: LoginComponent,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TeamsService } from '../services/teams.service';
 import { Team } from '../models/team'
 

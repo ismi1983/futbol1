@@ -10,6 +10,7 @@ import { ResponseLogin } from '../models/responses';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent{
 
   loginForm: FormGroup = new FormGroup({
@@ -41,11 +42,4 @@ export class LoginComponent{
     }
   }
 
-  // onLogin2(data) {
-  //   console.log(data)
-  // }
-
-  // onClick() {
-  //   console.log(this.search)
-  // }
 }

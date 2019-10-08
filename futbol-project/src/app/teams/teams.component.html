@@ -1,7 +1,7 @@
 <h1 class="title text-center mt-0">Equipos</h1>
-<div class="row m-0">
-    <div *ngFor='let team of teams' class="col-md-4 col-xl-3 col-sm-6">
-        <app-card-team [team]="team"></app-card-team>
+  <div class="row m-0">
+    <div *ngFor="let team of teams$ | async" class="col-md-4 col-xl-3 col-sm-6">
+      <app-card-team [team]="team"></app-card-team>
 
     </div>
-</div>
+  </div>
