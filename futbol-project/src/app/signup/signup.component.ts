@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SignupService} from '../services/signup.service';
+import { SignupService } from '../services/signup.service';
+import { Response } from '../models/responses';
 
 @Component({
   selector: 'app-signup',
@@ -23,15 +24,16 @@ export class SignupComponent implements OnInit {
     }
   }
   
-    onSignup() {
+    onSignup():void {
       if (this.signupForm.valid) {
         this.signupService.signup(this.signupForm.value)
-        .subscribe((response: Response) => {
+        .subscribe((response: Response): void => {
+          console.log(response)
           if (!response) {
             alert('¡Información incorrecta!')
           } else {
-            localStorage.setItem('auth', response);
-            this.router.navigate(['./welcome']);
+            alert('Registro exitoso')
+            this.router.navigate(['./']);
           }
         });
       } else {

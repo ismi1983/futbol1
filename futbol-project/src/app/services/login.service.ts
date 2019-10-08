@@ -18,7 +18,7 @@ export class LoginService {
       catchError((err) => {
         alert('there was an error.');
         console.log(err);
-        return of(err)
+        return (err)
     })
     )
   }

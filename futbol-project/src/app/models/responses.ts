@@ -23,3 +23,9 @@ export interface Response {
   message: string;
   data: object;
 }
+
+export interface ResponseSignup {
+  status: string;
+  message: string;
+  data: object;
+}
