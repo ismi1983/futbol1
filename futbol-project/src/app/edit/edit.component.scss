@@ -1,0 +1,13 @@
+.container {
+  background: rgba(255,255,255, .5);
+}
+
+.transparent {
+  color: transparent;
+}
+
+@media (max-width: 549px) {
+  .sm-remove {
+    display: none;
+  }
+}
